@@ -25,9 +25,9 @@ export const Home = () => {
     return (
         <>
             <div
-                className='p-[6rem] pt-[100px] '
+                className='p-[6rem] pt-[100px]'
                 style={{
-                    backgroundImage: "url('/dist/assets/logo4.png')",
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/dist/assets/logo4.png)`,
                     backgroundSize: 'cover',
                 }}
             >
