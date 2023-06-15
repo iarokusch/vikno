@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use(fileUpload());
 app.use(express.json());
-// app.use(cors({ origin: 'http://localhost:5173', exposedHeaders: ['token'] }));
+app.use(cors({ origin: 'http://localhost:5173', exposedHeaders: ['token'] }));
 app.use(express.urlencoded());
 
 app.use(express.static('public/dist'));

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function ArtistRegistr() {
-    const { user, setUser, artists, setArtists } = useContext(MyContext);
+    const { user, setUser, setArtists } = useContext(MyContext);
 
     const [error, setError] = useState('');
     const userProfile = JSON.parse(localStorage.getItem('user'));
@@ -65,7 +65,11 @@ export default function ArtistRegistr() {
             });
     }, []);
     return (
-        <form onSubmit={artistRegister} encType='multi-part/formdata'>
+        <form
+            className='w-[150px]'
+            onSubmit={artistRegister}
+            encType='multi-part/formdata'
+        >
             <div className=' space-y-12'>
                 <div className='border-b border-gray-900/10 pb-12'>
                     <div className=' grid grid-cols-1  gap-x-6 gap-y-8 sm:grid-cols-6 '>
