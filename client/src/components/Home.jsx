@@ -45,7 +45,7 @@ export const Home = () => {
                         <div className='grid grid-cols-3 gap-3 '>
                             <img
                                 className='slide-top'
-                                src={items[0]?.img[0]}
+                                src={items[0].img[0]}
                                 alt=''
                             />
                             <img
