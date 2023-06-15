@@ -135,7 +135,7 @@ export default function Menu() {
                 </div>
                 <NavLink to='/about'>
                     <div className='relative color-black top-[-15px] h-[70px] w-[70px] flex'>
-                        <img src='/logo6.png' />
+                        <img src='/assets/logo6.png' />
                         {/* <div className='text-left ml-3'>
                         <p>LOCAL</p>
                         <p>SUPPORT</p>
