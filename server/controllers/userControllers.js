@@ -86,6 +86,7 @@ export const addNewUser = async (req, res) => {
                 data: req.files.profile_img.data,
             });
             console.log(image);
+            // to do modify url
             newUser.profileImage = `http://localhost:4000/images/${image.filename}`;
         }
         await newUser.save();

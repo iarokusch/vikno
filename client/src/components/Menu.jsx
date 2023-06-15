@@ -65,20 +65,6 @@ export default function Menu() {
         setIsOpen(!isOpen);
     };
 
-    const isActive = (match, location) => {
-        if (match) {
-            return true;
-        } else if (
-            linksMenuWithProfile.some((item) =>
-                location.pathname.includes(item.href)
-            )
-        ) {
-            return true;
-        } else {
-            return false;
-        }
-    };
-
     useEffect(() => {
         if (localStorage.getItem('token')) {
             setIsLoggedIn(true);
@@ -101,7 +87,7 @@ export default function Menu() {
                     backgroundImage:
                         "url('http://localhost:5173/src/assets/logo4.2.png')",
 
-                    backgroundRepeat: 'no-repeat',
+                    // backgroundRepeat: 'no-repeat',
                 }}
                 // style={{ backgroundColor: 'rgb(178, 34, 34)' }}
             >
@@ -156,7 +142,7 @@ export default function Menu() {
                     </div>
                 </NavLink>
                 <div className='flex gap-20 '>
-                    <NavLink to='/' isActive={isActive}>
+                    <NavLink to='/'>
                         <h1 style={{ color: 'white' }}>Home</h1>
                     </NavLink>
                     <NavLink to='/login'>

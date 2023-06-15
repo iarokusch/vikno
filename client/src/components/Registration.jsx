@@ -31,22 +31,27 @@ export default function Register() {
         //     // profileImage: e.target.profileImage.value,
         // };
 
-        axios.post('/users/newuser', data).then((res) => {
-            if (res.data.success) {
-                console.log(res.data);
-                // navigate user to login page
-                navigate('/login');
-            } else {
-                setError(res.data.message[0].undefined);
-                alert(res.data.message[0].undefined);
-                // setErr({ ...err, ...response.data.message[0] });
-                /*  setTimeout( ()=>{
+        axios
+            .post('/users/newuser', data)
+            .then((res) => {
+                if (res.data.success) {
+                    console.log(res.data);
+                    // navigate user to login page
+                    navigate('/login');
+                } else {
+                    setError(res.data.message[0].undefined);
+                    alert(res.data.message[0].undefined);
+                    // setErr({ ...err, ...response.data.message[0] });
+                    /*  setTimeout( ()=>{
           setErr({firstName:"", lastName:"", email:"",password:""})
         },2000) */
-            }
-        });
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
-    console.log(error);
+
     return (
         <>
             {/*
