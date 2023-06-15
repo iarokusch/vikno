@@ -17,8 +17,10 @@ const ArtistPage = () => {
         axios
             .get(`/artists/${id}`)
             .then((res) => {
-                setArtist(res.data.data);
-                console.log(res.data.data);
+                if (res.data.success) {
+                    setArtist(res.data.data);
+                    console.log(res.data.data);
+                }
             })
             .catch((err) => {
                 console.log('Error ', err);
@@ -26,8 +28,10 @@ const ArtistPage = () => {
         axios
             .get(`/items`)
             .then((res) => {
-                setItems(res.data.data);
-                console.log(res.data.data);
+                if (res.data.success) {
+                    setItems(res.data.data);
+                    console.log(res.data.data);
+                }
             })
             .catch((err) => {
                 console.log('Error ', err);

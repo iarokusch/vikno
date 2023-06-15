@@ -11,8 +11,10 @@ export const Home = () => {
         axios
             .get('/items')
             .then((res) => {
-                setItems(res.data.data);
-                console.log(res.data.data);
+                if (res.data.success) {
+                    setItems(res.data.data);
+                    console.log(res.data.data);
+                }
             })
             .catch((err) => {
                 console.log('Error ', err);

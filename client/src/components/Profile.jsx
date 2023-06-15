@@ -13,7 +13,9 @@ export default function Profile() {
         axios
             .get(`/artists`)
             .then((res) => {
-                setArtists(res.data.data);
+                if (res.data.success) {
+                    setArtists(res.data.data);
+                }
             })
             .catch((err) => {
                 console.log('Error ', err);

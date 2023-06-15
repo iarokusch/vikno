@@ -56,7 +56,9 @@ export default function ArtistRegistr() {
         axios
             .get(`/users/${userProfile.data._id}`)
             .then((res) => {
-                setUser(res.data);
+                if (res.data.success) {
+                    setUser(res.data);
+                }
             })
             .catch((err) => {
                 console.log('Error ', err);
@@ -178,7 +180,7 @@ export default function ArtistRegistr() {
                                     id='projectRoles'
                                     name='projectRoles'
                                     rows={3}
-                                    className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                                    className='bif (res.data.success)lock w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                                     defaultValue={''}
                                 />
                             </div>

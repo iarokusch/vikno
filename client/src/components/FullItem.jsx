@@ -12,8 +12,10 @@ const FullItem = () => {
         axios
             .get(`/items/fullitem/${id}`)
             .then((res) => {
-                setItemData(res.data.data);
-                console.log(res.data.data);
+                if (res.data.success) {
+                    setItemData(res.data.data);
+                    console.log(res.data.data);
+                }
             })
             .catch((err) => {
                 console.log('Error ', err);
@@ -24,8 +26,10 @@ const FullItem = () => {
         axios
             .get(`/artists`)
             .then((res) => {
-                setArtist(res.data.data);
-                console.log(res.data.data);
+                if (res.data.success) {
+                    setArtist(res.data.data);
+                    console.log(res.data.data);
+                }
             })
             .catch((err) => {
                 console.log('Error ', err);
