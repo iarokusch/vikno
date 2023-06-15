@@ -84,12 +84,15 @@ export default function Menu() {
                 }}
                 className='absolute pt-8 top-0 left-0 right-0 mb-9 text-xl flex justify-between pl-[300px] pr-[200px] h-[100px] bg-black bg-right-bottom'
                 style={{
-                    backgroundImage: "url('/logo4.2.png')",
+                    backgroundImage: "url('/assets/logo4.2.png')",
 
                     // backgroundRepeat: 'no-repeat',
                 }}
+
                 // style={{ backgroundColor: 'rgb(178, 34, 34)' }}
             >
+                <img src='/assets/logo4.png' />
+
                 <div className='menu-section'>
                     <div className='relative'>
                         <button
