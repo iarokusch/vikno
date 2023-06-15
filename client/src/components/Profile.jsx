@@ -83,7 +83,7 @@ export default function Profile() {
                             you alredy added artist {}
                         </h3>
                         <div className='text-gray-600 mt-2'>
-                            {user?.isArtist ? (
+                            {user.isArtist ? (
                                 <div>
                                     <div
                                         onClick={() => {
@@ -96,7 +96,7 @@ export default function Profile() {
                                     </div>
                                 </div>
                             ) : (
-                                <NavLink to='/artistregistr'>
+                                <NavLink to='/artistregister'>
                                     artist application
                                 </NavLink>
                             )}

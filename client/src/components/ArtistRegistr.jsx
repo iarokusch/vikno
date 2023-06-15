@@ -45,7 +45,7 @@ export default function ArtistRegistr() {
                 if (res.data.success) {
                     console.log(res.data);
                     setArtists(res.data.data);
-                    navigate('/itemregistr');
+                    navigate('/itemregister', { state: res.data.data });
                 } else {
                     setError(res.data.msg);
                 }
