@@ -85,9 +85,13 @@ app.post('/send-email', (req, res) => {
 // });
 
 mongoose
-    .connect(process.env.URI)
-    .then(() => console.log('connection to DB'))
-    .catch((err) => console.log(err.message)); //why arrow function?
+    .connect(process.env.URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => console.log('Connected to MongoDB Atlas'))
+    .catch((err) => console.error(err));
+
 app.listen(PORT, () => {
-    console.log('server is running on port ', PORT);
+    console.log('Server is running on port', PORT);
 });

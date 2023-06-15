@@ -3,6 +3,7 @@ import artistCollection from '../models/artistSchema.js';
 import imgCollection from '../models/imgSchema.js';
 import userCollection from '../models/userSchema.js';
 import { stripe } from '../server.js';
+
 export const createPaymentSession = async (req, res) => {
     try {
         console.log(req.body);
@@ -26,11 +27,12 @@ export const createPaymentSession = async (req, res) => {
                 quantity: 1,
             };
         });
+
         const session = await stripe.checkout.sessions.create({
             line_items,
             mode: 'payment',
-            success_url: `http://localhost:5173/cart?success=true`,
-            cancel_url: `http://localhost:5173/cart?success=false`,
+            success_url: `https://vikno.onrender.com/cart?success=true`,
+            cancel_url: `https://vikno.onrender.com/cart?success=false`,
         });
 
         res.json({ success: true, url: session.url });
@@ -38,6 +40,7 @@ export const createPaymentSession = async (req, res) => {
         res.json(error);
     }
 };
+
 export const getAllItems = async (req, res) => {
     try {
         const allItems = await itemCollections.find();
@@ -46,6 +49,7 @@ export const getAllItems = async (req, res) => {
         res.json(error);
     }
 };
+
 export const getOneItems = async (req, res) => {
     try {
         const id = req.params.id;
@@ -56,14 +60,16 @@ export const getOneItems = async (req, res) => {
         console.log('get one item', error.message);
     }
 };
+
 export const addNewItem = async (req, res) => {
     try {
         const newItem = new itemCollections({
             ...req.body,
-
             // img: [req.files.img.data],
         });
+
         console.log(req.files.item_img);
+
         if (Array.isArray(req.files.item_img)) {
             for (const file of req.files.item_img) {
                 const image = await imgCollection.create({
@@ -71,7 +77,7 @@ export const addNewItem = async (req, res) => {
                     data: file.data,
                 });
 
-                const img = `http://localhost:4000/images/${image.filename}`;
+                const img = `https://vikno.onrender.com/images/${image.filename}`;
                 newItem.img.push(img);
             }
         } else if (req.files.item_img) {
@@ -80,16 +86,17 @@ export const addNewItem = async (req, res) => {
                 data: req.files.item_img.data,
             });
 
-            const img = `http://localhost:4000/images/${image.filename}`;
+            const img = `https://vikno.onrender.com/images/${image.filename}`;
             newItem.img.push(img);
         }
-        // artistCollection.insertOne({ $push: { items: newItem } });
+
         await newItem.save();
+
         const artist = await artistCollection.findByIdAndUpdate(
             req.body.artistId,
-
             { $push: { items: newItem._id } }
         );
+
         const user = await userCollection.findById(req.user._id).populate({
             path: 'userArtist',
             populate: { path: 'items', model: 'item' },
@@ -102,6 +109,7 @@ export const addNewItem = async (req, res) => {
         // alert({ msg: error });
     }
 };
+
 export const upDateItem = async (req, res) => {
     const { id } = req.params;
     try {
@@ -114,6 +122,7 @@ export const upDateItem = async (req, res) => {
         res.json(error);
     }
 };
+
 export const getAllArtistItem = async (req, res) => {
     const { id } = req.params;
     try {
@@ -123,6 +132,7 @@ export const getAllArtistItem = async (req, res) => {
         res.json(error);
     }
 };
+
 export const delItemById = async (req, res) => {
     const { id } = req.params;
     try {
