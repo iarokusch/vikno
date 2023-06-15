@@ -66,7 +66,7 @@ export default function ArtistRegistr() {
     }, []);
     return (
         <form
-            className='w-[150px]'
+            className='mt-[200px] min-h-[100vh]'
             onSubmit={artistRegister}
             encType='multi-part/formdata'
         >
