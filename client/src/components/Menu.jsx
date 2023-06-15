@@ -86,12 +86,12 @@ export default function Menu() {
                 style={{
                     backgroundImage: "url('/assets/logo4.2.png')",
 
-                    // backgroundRepeat: 'no-repeat',
+                    backgroundRepeat: 'no-repeat',
                 }}
 
                 // style={{ backgroundColor: 'rgb(178, 34, 34)' }}
             >
-                <img src='/assets/logo4.png' />
+                {/* <img src='/assets/logo4.png' /> */}
 
                 <div className='menu-section'>
                     <div className='relative'>
