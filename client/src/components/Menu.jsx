@@ -84,8 +84,7 @@ export default function Menu() {
                 }}
                 className='absolute pt-8 top-0 left-0 right-0 mb-9 text-xl flex justify-between pl-[300px] pr-[200px] h-[100px] bg-black bg-right-bottom'
                 style={{
-                    backgroundImage:
-                        "url('http://localhost:5173/src/assets/logo4.2.png')",
+                    backgroundImage: "url('/assets/logo4.2.png')",
 
                     // backgroundRepeat: 'no-repeat',
                 }}
@@ -133,7 +132,7 @@ export default function Menu() {
                 </div>
                 <NavLink to='/about'>
                     <div className='relative color-black top-[-15px] h-[70px] w-[70px] flex'>
-                        <img src='http://localhost:5173/src/assets/logo6.png' />
+                        <img src='/assets/logo6.png' />
                         {/* <div className='text-left ml-3'>
                         <p>LOCAL</p>
                         <p>SUPPORT</p>
