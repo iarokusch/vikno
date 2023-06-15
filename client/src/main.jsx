@@ -5,9 +5,11 @@ import './index.css';
 import { HashRouter } from 'react-router-dom';
 import Container from './context/Container.jsx';
 import axios from 'axios';
-if (import.meta.env.DEV) {
-    axios.defaults.baseURL = 'http://localhost:4000';
-}
+// if (import.meta.env.DEV) {
+//     axios.defaults.baseURL = 'http://localhost:4000';
+// }
+axios.defaults.baseURL =
+    process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : '';
 export const axiosWithToken = axios.create({
     headers: {
         'Content-Type': 'application/json',
