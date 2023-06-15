@@ -24,6 +24,8 @@ app.use(express.json());
 app.use(cors({ origin: 'http://localhost:5173', exposedHeaders: ['token'] })); //need to know
 app.use(express.urlencoded());
 
+app.use(express.static('public/dist'));
+
 app.use('/users', userRoute);
 app.use('/items', itemRoute);
 app.use('/artists', artistRoute);

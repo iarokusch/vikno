@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import Container from './context/Container.jsx';
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:4000';
+// axios.defaults.baseURL = 'http://localhost:4000';
 export const axiosWithToken = axios.create({
     headers: {
         'Content-Type': 'application/json',
@@ -13,9 +13,9 @@ export const axiosWithToken = axios.create({
     },
 });
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
+    <HashRouter>
         <Container>
             <App />
         </Container>
-    </BrowserRouter>
+    </HashRouter>
 );

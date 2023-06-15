@@ -25,8 +25,7 @@ export const Home = () => {
             <div
                 className='p-[6rem] pt-[100px] '
                 style={{
-                    backgroundImage:
-                        "url('http://localhost:5173/src/assets/logo4.png')",
+                    backgroundImage: "url('../assets/logo4.png')",
                     backgroundSize: 'cover',
                 }}
             >
