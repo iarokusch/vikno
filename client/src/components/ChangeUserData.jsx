@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
 export default function ChangeUserData() {
     const location = useLocation();
     const user = location.state;
@@ -46,7 +47,7 @@ export default function ChangeUserData() {
                 }
             );
             console.log(response.data);
-            navigate('/catalog'); // Handle the response as needed
+            navigate('/catalog'); // Navigate to the catalog page
         } catch (error) {
             console.log(error); // Handle the error
         }
