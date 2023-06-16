@@ -6,6 +6,7 @@ import axios from 'axios';
 export default function Profile() {
     const { setUser, user, artists, setArtists, setIsLoggedIn } =
         useContext(MyContext);
+    const [isDel, setIsDel] = useState(false);
     const [selectedFile, setSelectedFile] = useState(null);
     const navigate = useNavigate();
 
@@ -20,7 +21,7 @@ export default function Profile() {
             .catch((err) => {
                 console.log('Error ', err);
             });
-    }, []);
+    }, [isDel]);
 
     const uploadImg = async (e) => {
         e.preventDefault();
@@ -46,10 +47,42 @@ export default function Profile() {
         // Redirect to the login page or any desired page
         navigate('/login');
     };
-    console.log(user);
+    const deleteUser = async (userId) => {
+        try {
+            const res = await axios.delete(`/users/${userId}`, {
+                headers: { token: localStorage.getItem('token') },
+            });
+            if (res.data.success) {
+                // Item deleted successfully, perform any necessary actions
+                alert('User deleted');
+                console.log('User deleted');
+                setIsDel(true);
+            }
+        } catch (error) {
+            console.log('Error deleting item', error);
+        }
+    };
+
     return (
         <div className=' min-h-[100vh] mt-[150px]'>
             YOUR PROFILE
+            <div>
+                <div className='flex justify-end mt-2'>
+                    <NavLink
+                        to='/changeuserdata'
+                        state={user}
+                        className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2'
+                    >
+                        Edit
+                    </NavLink>
+                    <button
+                        className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mr-2'
+                        onClick={() => deleteUser(user._id)}
+                    >
+                        Delete
+                    </button>
+                </div>
+            </div>
             <div className='bg-gray-100 mt-[30px] py-[30px]'>
                 <div className='max-w-lg mx-auto bg-white rounded-lg shadow-md p-5  '>
                     <p className=' mtext-center text-xl font-semibold mt-3'>
@@ -80,7 +113,7 @@ export default function Profile() {
 
                     <div className='mt-20'>
                         <h3 className='text-xl font-semibold'>
-                            you alredy added artist {}
+                            you already added artist {}
                         </h3>
                         <div className='text-gray-600 mt-2'>
                             {user.isArtist ? (
