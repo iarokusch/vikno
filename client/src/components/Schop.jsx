@@ -45,10 +45,10 @@ const Shop = () => {
     const handleCloseFullScreen = () => {
         setSelectedItem(null);
     };
-    const handleSelectItem = (item) => {
-        setSelectedItem(item);
-        navigate('/fullitem');
-    };
+    // const handleSelectItem = (item) => {
+    //     setSelectedItem(item);
+    //     navigate('/fullitem');
+    // };
 
     // axios
     //     .post('http://localhost:4000/items/order', cart, {
@@ -65,7 +65,7 @@ const Shop = () => {
     //     });
 
     return (
-        <div className='mt-[150px]'>
+        <div className='mt-[150px] min-h-[100vh]'>
             <h1>Shop</h1>
             <div className='absolute right-[40px]'>
                 {/* {cart.map((item) => {
@@ -97,14 +97,14 @@ const Shop = () => {
                                 <h2 className='text-xl mb-2'>{item.title}</h2>
                                 <h3>{item.description}</h3>
                                 <h1 className='text-lg mb-2'>{item.price}</h1>
-                                <Link to={`/fullitem/${item._id}`}>
+                                <Link to={`/fullitem`} state={item}>
                                     <Carousel showThumbs={false}>
                                         {item.img.map((image, index) => (
                                             <div
                                                 key={index}
-                                                onClick={() =>
-                                                    handleSelectItem(item)
-                                                }
+                                                // onClick={() =>
+                                                //     handleSelectItem(item)
+                                                // }
                                             >
                                                 <img src={image} alt='' />
                                             </div>

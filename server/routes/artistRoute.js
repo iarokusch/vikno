@@ -16,8 +16,8 @@ router.get('/', getAllArtists);
 router.get('/:id', getArtistById);
 router.post('/newartist', auth, addNewArtist);
 router.post('/:userId', getArtistByUserId);
-router.patch('/:id', auth, isAdmin, changeArtistData);
-router.put('/:id', isArtistUpdate);
-router.delete('/:id', delArtistById);
+router.patch('/:id', auth, changeArtistData);
+router.put('/:id', auth, isArtistUpdate);
+router.delete('/:id', auth, isAdmin, delArtistById);
 
 export default router;

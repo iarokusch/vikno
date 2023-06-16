@@ -12,7 +12,7 @@ import {
 import { auth } from '../midleware/auth.js';
 import { isAdmin } from '../midleware/isAdmin.js';
 import { rules } from '../midleware/validators.js';
-router.get('/', getAllUsers);
+router.get('/', isAdmin, getAllUsers);
 router.get('/refresh', auth, (req, res) => {
     res.send({ success: true, data: req.user });
 });

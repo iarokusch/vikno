@@ -118,6 +118,7 @@ export const upDateItem = async (req, res) => {
             req.body,
             { new: true }
         );
+        res.json({ msg: success, data: updateItem });
     } catch (error) {
         res.json(error);
     }

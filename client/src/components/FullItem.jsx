@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 const FullItem = () => {
-    const { id } = useParams();
+    const { state } = useLocation();
+    console.log(state);
+    const id = state._id;
     const [itemData, setItemData] = useState([]);
     const [artist, setArtist] = useState({});
     const navigate = useNavigate();
@@ -21,20 +23,6 @@ const FullItem = () => {
                 console.log('Error ', err);
             });
     }, [id]);
-
-    useEffect(() => {
-        axios
-            .get(`/artists`)
-            .then((res) => {
-                if (res.data.success) {
-                    setArtist(res.data.data);
-                    console.log(res.data.data);
-                }
-            })
-            .catch((err) => {
-                console.log('Error ', err);
-            });
-    }, []);
 
     const handleGoBack = () => {
         navigate('/shop');

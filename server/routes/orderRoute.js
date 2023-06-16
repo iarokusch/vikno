@@ -10,7 +10,7 @@ import {
 import { auth } from '../midleware/auth.js';
 import { isAdmin } from '../midleware/isAdmin.js';
 // get request "/orders/" get all orders
-router.get('/', auth, getAllOrders);
+router.get('/', auth, isAdmin, getAllOrders);
 
 // post request "/orders/" redirecting user to stripe checkout page
 router.post('/', auth, openStripeChekoutPage);

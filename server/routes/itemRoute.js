@@ -11,11 +11,12 @@ import {
     createPaymentSession,
     getOneItems,
 } from '../controllers/itemControllers.js';
+import { isAdmin } from '../midleware/isAdmin.js';
 router.get('/', getAllItems);
 router.post('/newitem', auth, addNewItem);
 router.post('/order', auth, createPaymentSession);
-router.patch('/:id', upDateItem);
-router.get('/:id', getAllArtistItem);
+router.patch('/:id', auth, upDateItem);
+router.get('/:id', auth, isAdmin, getAllArtistItem);
 router.get('/fullitem/:id', getOneItems);
-router.delete('/:id', delItemById);
+router.delete('/:id', auth, delItemById);
 export default router;

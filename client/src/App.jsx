@@ -22,6 +22,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import FullItem from './components/FullItem';
+import ChangeItemData from './components/ChangeItemData';
 function App() {
     const location = useLocation();
 
@@ -52,8 +53,10 @@ function App() {
                 <Route path='/press' element={<Press />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/privacypolicy' element={<PrivacyPolicy />} />
+                <Route path='/fullitem' element={<FullItem />} />
                 <Route path='/fullitem/:id' element={<FullItem />} />
                 <Route path='/shop/:id' element={<FullItem />} />
+                <Route path='/changeuserdata' element={<ChangeItemData />} />
             </Routes>
             <Footer />
         </>

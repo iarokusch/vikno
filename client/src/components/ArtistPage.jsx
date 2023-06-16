@@ -6,9 +6,12 @@ import { MyContext } from '../context/context';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { BsArrowLeftShort } from 'react-icons/bs';
+
 const ArtistPage = () => {
+    const [isDel, setIsDel] = useState(false);
     const [artist, setArtist] = useState(null);
-    const { setItems, user } = useContext(MyContext);
+    const { items, setItems, user, isLoggedIn, setIsLoggedIn } =
+        useContext(MyContext);
     const userProfile = JSON.parse(localStorage.getItem('user'));
     const navigate = useNavigate();
     const { id } = useParams();
@@ -30,13 +33,31 @@ const ArtistPage = () => {
             .then((res) => {
                 if (res.data.success) {
                     setItems(res.data.data);
+                    if (localStorage.getItem('token')) {
+                        setIsLoggedIn(true);
+                    }
                     console.log(res.data.data);
                 }
             })
             .catch((err) => {
                 console.log('Error ', err);
             });
-    }, []);
+    }, [isDel]);
+
+    const deleteItem = async (itemId) => {
+        try {
+            const res = await axios.delete(`/items/${itemId}`, {
+                headers: { token: localStorage.getItem('token') },
+            });
+            if (res.data.success) {
+                // Item deleted successfully, perform any necessary actions
+                console.log('Item deleted');
+                setIsDel(true);
+            }
+        } catch (error) {
+            console.log('Error deleting item', error);
+        }
+    };
 
     console.log(artist);
 
@@ -104,7 +125,7 @@ const ArtistPage = () => {
                                 <h4>size : {item.size}</h4>
                             </div>
 
-                            <Link to={`/fullitem/${item._id}`}>
+                            <Link to={`/fullitem`} state={item}>
                                 <Carousel showThumbs={false}>
                                     {item.img.map((el, index) => (
                                         <div key={index}>
@@ -116,6 +137,26 @@ const ArtistPage = () => {
                                     ))}
                                 </Carousel>
                             </Link>
+
+                            {/* Buttons for edit, delete, and save */}
+                            {isLoggedIn &&
+                            user?.userArtist?._id === artist?._id ? (
+                                <div className='flex justify-end mt-2'>
+                                    <NavLink
+                                        to='/changeuserdata'
+                                        state={item}
+                                        className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2'
+                                    >
+                                        Edit
+                                    </NavLink>
+                                    <button
+                                        className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mr-2'
+                                        onClick={() => deleteItem(item._id)}
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            ) : null}
                         </div>
                     ))}
                 </div>
