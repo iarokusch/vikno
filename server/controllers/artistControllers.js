@@ -12,7 +12,7 @@ export const addNewArtist = async (req, res) => {
                 data: req.files.artist_profile_img.data,
             });
             console.log(image);
-            newArtist.profileImage = `http://localhost:4000/images/${image.filename}`;
+            newArtist.profileImage = `https://vikno.onrender.com/images/${image.filename}`;
         }
 
         await newArtist.save();

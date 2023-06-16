@@ -7,7 +7,7 @@ export default function Cart() {
 
     const checkOut = () => {
         axios
-            .post('http://localhost:4000/items/order', cart, {
+            .post('https://vikno.onrender.com/items/order', cart, {
                 headers: {
                     'Content-Type': 'application/json',
                     token: localStorage.getItem('token'),
@@ -26,7 +26,7 @@ export default function Cart() {
     };
 
     return (
-        <div className='min-h-[90vh] mb-[100px]'>
+        <div className='min-h-[90vh] mt-[150px]'>
             <h1>Cart Items</h1>
             {cart.map((item) => {
                 return (

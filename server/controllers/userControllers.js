@@ -14,7 +14,7 @@ export const uploadProfileImg = async (req, res, next) => {
             data: req.files.profileImg.data,
         });
         await img.save();
-        user.profileImage = `http://localhost:4000/images/${img.filename}`;
+        user.profileImage = `https://vikno.onrender.com/images/${img.filename}`;
         await user.save();
         res.json({
             success: true,
@@ -87,7 +87,7 @@ export const addNewUser = async (req, res) => {
             });
             console.log(image);
             // to do modify url
-            newUser.profileImage = `http://localhost:4000/images/${image.filename}`;
+            newUser.profileImage = `https://vikno.onrender.com/images/${image.filename}`;
         }
         await newUser.save();
         console.log(newUser);

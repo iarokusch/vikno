@@ -66,7 +66,7 @@ export default function ArtistRegistr() {
     }, []);
     return (
         <form
-            className='mt-[200px] min-h-[100vh]'
+            className='mt-[200px] min-h-[100vh] mx-[6rem]'
             onSubmit={artistRegister}
             encType='multi-part/formdata'
         >
@@ -225,7 +225,7 @@ export default function ArtistRegistr() {
                                 </label>
                                 <div className='mt-2 flex items-center gap-x-3'>
                                     <label className='cursor-pointer'>
-                                        Select your artist profile image
+                                        Select artist profile image
                                         <input
                                             name='artist_profile_img'
                                             type='file'
@@ -247,7 +247,7 @@ export default function ArtistRegistr() {
                 {/* part */}
             </div>
 
-            <div className='mt-6 flex items-center justify-end gap-x-6'>
+            <div className='my-6 flex items-center justify-end gap-x-6'>
                 <button
                     onClick={() => navigate('/')}
                     type='button'

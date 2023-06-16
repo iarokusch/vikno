@@ -50,7 +50,7 @@ const ItemRegister = () => {
     };
 
     return (
-        <div className='mt-[20px]  min-h-[80vh]'>
+        <div className='mt-[150px]  min-h-[100vh]'>
             <h4 className='pb-[30px]'>
                 Item / Object / Works registartion form
             </h4>
