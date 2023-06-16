@@ -22,7 +22,9 @@ export default function Profile() {
                 console.log('Error ', err);
             });
     }, [isDel]);
-
+    useEffect(() => {
+        // Reload the page or perform any necessary actions
+    }, []);
     const uploadImg = async (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
