@@ -42,11 +42,11 @@ export default function ChangeUserData() {
                 `/users/${userId}`,
                 updateduser,
                 {
-                    headers: { token: localStorage.getuser('token') },
+                    headers: { token: localStorage.getItem('token') },
                 }
             );
             console.log(response.data);
-            navigate('/'); // Handle the response as needed
+            navigate('/catalog'); // Handle the response as needed
         } catch (error) {
             console.log(error); // Handle the error
         }
