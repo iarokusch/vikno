@@ -64,7 +64,7 @@ export default function ChangeUserData() {
                             id='firstName'
                             name='firstName'
                             value={firstName}
-                            onChange={handleTitleChange}
+                            onChange={handlefirstNameChange}
                         />
                     </div>
                     <div>
