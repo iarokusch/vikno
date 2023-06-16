@@ -143,7 +143,7 @@ const ArtistPage = () => {
                             user?.userArtist?._id === artist?._id ? (
                                 <div className='flex justify-end mt-2'>
                                     <NavLink
-                                        to='/changeuserdata'
+                                        to='/changeitemdata'
                                         state={item}
                                         className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2'
                                     >

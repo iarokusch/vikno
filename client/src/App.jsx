@@ -23,6 +23,7 @@ import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import FullItem from './components/FullItem';
 import ChangeItemData from './components/ChangeItemData';
+import ChangeUserData from './components/ChangeUserData';
 function App() {
     const location = useLocation();
 
@@ -56,7 +57,8 @@ function App() {
                 <Route path='/fullitem' element={<FullItem />} />
                 <Route path='/fullitem/:id' element={<FullItem />} />
                 <Route path='/shop/:id' element={<FullItem />} />
-                <Route path='/changeuserdata' element={<ChangeItemData />} />
+                <Route path='/changeitemdata' element={<ChangeItemData />} />
+                <Route path='/changeuserdata' element={<ChangeUserData />} />
             </Routes>
             <Footer />
         </>
