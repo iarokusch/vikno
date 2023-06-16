@@ -47,7 +47,7 @@ export default function ChangeUserData() {
                 }
             );
             console.log(response.data);
-            navigate('/catalog'); // Navigate to the catalog page
+            navigate('/profile'); // Navigate to the catalog page
         } catch (error) {
             console.log(error); // Handle the error
         }
