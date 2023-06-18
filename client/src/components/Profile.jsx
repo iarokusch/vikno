@@ -7,7 +7,7 @@ export default function Profile() {
     const { setUser, user, artists, setArtists, setIsLoggedIn } =
         useContext(MyContext);
     const [isDel, setIsDel] = useState(false);
-    const [selectedFile, setSelectedFile] = useState(null);
+    // const [selectedFile, setSelectedFile] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -22,9 +22,7 @@ export default function Profile() {
                 console.log('Error ', err);
             });
     }, [isDel]);
-    useEffect(() => {
-        // Reload the page or perform any necessary actions
-    }, []);
+
     const uploadImg = async (e) => {
         e.preventDefault();
         const data = new FormData(e.target);
@@ -49,30 +47,32 @@ export default function Profile() {
         // Redirect to the login page or any desired page
         navigate('/login');
     };
-    const deleteUser = async (userId) => {
-        try {
-            const res = await axios.delete(`/users/${userId}`, {
-                headers: { token: localStorage.getItem('token') },
-            });
-            if (res.data.success) {
-                // Item deleted successfully, perform any necessary actions
-                alert('User deleted');
-                console.log('User deleted');
-                setIsDel(true);
-            }
-        } catch (error) {
-            console.log('Error deleting item', error);
-        }
-    };
+    // const deleteUser = async (userId) => {
+    //     try {
+    //         const res = await axios.delete(`/users/${userId}`, {
+    //             headers: { token: localStorage.getItem('token') },
+    //         });
+    //         if (res.data.success) {
+    //             // Item deleted successfully, perform any necessary actions
+    //             alert('User deleted');
+    //             console.log('User deleted');
+    //             setIsDel(true);
+    //         }
+    //     } catch (error) {
+    //         console.log('Error deleting item', error);
+    //     }
+    // };
 
     return (
         <div className=' min-h-[100vh] mt-[150px]'>
             YOUR PROFILE
             <div>
-                <div className='flex justify-end mt-2'>
+                {/* <div className='flex justify-end mt-2'>
                     <NavLink
-                        to='/changeuserdata'
-                        state={user}
+                        to={{
+                            pathname: '/changeuserdata',
+                            state: { userId: user._id },
+                        }}
                         className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2'
                     >
                         Edit
@@ -83,7 +83,7 @@ export default function Profile() {
                     >
                         Delete
                     </button>
-                </div>
+                </div> */}
             </div>
             <div className='bg-gray-100 mt-[30px] py-[30px]'>
                 <div className='max-w-lg mx-auto bg-white rounded-lg shadow-md p-5  '>
@@ -118,7 +118,7 @@ export default function Profile() {
                             you already added artist {}
                         </h3>
                         <div className='text-gray-600 mt-2'>
-                            {user.isArtist ? (
+                            {user?.isArtist ? (
                                 <div>
                                     <div
                                         onClick={() => {

@@ -18,12 +18,12 @@ import { Home } from './components/Home';
 import Menu from './components/Menu';
 import Items from './components/Items';
 import Cart from './components/Cart';
-import NavBar from './components/NavBar';
+
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import FullItem from './components/FullItem';
 import ChangeItemData from './components/ChangeItemData';
-import ChangeUserData from './components/ChangeUserData';
+
 function App() {
     const location = useLocation();
 
@@ -38,7 +38,7 @@ function App() {
                 <Route path='/artists/:id' element={<ArtistPage />} />
                 {/* <Route path='/items/:id' element={<Items />} /> */}
                 <Route path='/' element={<Home />} />
-                <Route path='/navbar' element={<NavBar />} />
+
                 <Route path='/participation' element={<Paticipation />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/catalog' element={<Catalog />} />
@@ -49,6 +49,11 @@ function App() {
                 <Route path='/login' element={<Login />} />
                 <Route path='/itemregister' element={<ItemRegister />} />
                 <Route path='/profile' element={<Profile />} />
+                {/* <Route
+                    path='/changeartistdata'
+                    element={<ChangeArtistData />}
+                /> */}
+                {/* <Route path='/users/:id' element={<Profile />} /> */}
                 <Route path='/artistregister' element={<ArtistRegistr />} />
                 <Route path='/orders' element={<Orders />} />
                 <Route path='/press' element={<Press />} />
@@ -58,7 +63,7 @@ function App() {
                 <Route path='/fullitem/:id' element={<FullItem />} />
                 <Route path='/shop/:id' element={<FullItem />} />
                 <Route path='/changeitemdata' element={<ChangeItemData />} />
-                <Route path='/changeuserdata' element={<ChangeUserData />} />
+                {/* <Route path='/changeuserdata' element={<ChangeUserData />} /> */}
             </Routes>
             <Footer />
         </>

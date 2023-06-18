@@ -35,10 +35,16 @@ const Paticipation = () => {
                 </>
             </div>
             <div className='mt-40 flex justify-around'>
-                <div className='border-[1px] border-black p-3 '>
+                <div
+                    className='border-[1px] bg-black  font-bold p-3 '
+                    style={{ color: 'rgb(253 224 71)' }}
+                >
                     <NavLink to='/users/newuser'> Registration form </NavLink>
                 </div>
-                <div className='border-[1px] border-black p-3 '>
+                <div
+                    className='border-[1px] bg-black text-white font-bold border-black p-3 '
+                    style={{ color: 'rgb(253 224 71)' }}
+                >
                     <NavLink to='/login'> Sing In </NavLink>
                 </div>
             </div>

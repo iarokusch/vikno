@@ -113,7 +113,11 @@ const Shop = () => {
                                 </Link>
                                 <button
                                     onClick={() => addItemInCart(item)}
-                                    className='bg-green-500 text-white py-2 px-4 rounded'
+                                    className=' py-2 px-4 rounded font-bold'
+                                    style={{
+                                        backgroundImage: `url('/assets/logo3.png')`,
+                                        backgroundSize: '100% 100%',
+                                    }}
                                 >
                                     Add to Cart
                                 </button>
