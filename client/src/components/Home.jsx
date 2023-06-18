@@ -8,8 +8,8 @@ export const Home = () => {
 
     // const navigate = useNavigate();
     useEffect(() => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
+        // localStorage.removeItem('token');
+        // localStorage.removeItem('user');
         axios
             .get('/items')
             .then((res) => {

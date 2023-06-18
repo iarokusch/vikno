@@ -229,7 +229,7 @@ export default function ArtistRegistr() {
                 <button
                     onClick={() => navigate('/')}
                     type='button'
-                    className='text-sm font-semibold leading-6 text-gray-900'
+                    className='rounded-md  px-3 py-2 text-sm font-semibold  shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
                 >
                     Cancel
                 </button>

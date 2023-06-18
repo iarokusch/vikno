@@ -114,12 +114,13 @@ export default function Profile() {
                     </form>
 
                     <div className='mt-20'>
-                        <h3 className='text-xl font-semibold'>
-                            you already added artist {}
-                        </h3>
                         <div className='text-gray-600 mt-2'>
                             {user?.isArtist ? (
                                 <div>
+                                    {' '}
+                                    <h3 className='text-xl font-semibold'>
+                                        you already added artist
+                                    </h3>
                                     <div
                                         onClick={() => {
                                             navigate(
