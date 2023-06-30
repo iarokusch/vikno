@@ -113,13 +113,13 @@ const Shop = () => {
                                 </Link>
                                 <button
                                     onClick={() => addItemInCart(item)}
-                                    className=' py-2 px-4 rounded font-bold'
-                                    style={{
-                                        backgroundImage: `url('/assets/logo3.png')`,
-                                        backgroundSize: '100% 100%',
-                                    }}
+                                    className='mt-[13px] py-2 px-4 rounded font-bold bg-yellow-300 hover:bg-yellow-300'
+                                    // style={{
+                                    //     backgroundImage: `url('/assets/logo3.png')`,
+                                    //     backgroundSize: '100% ',
+                                    // }}
                                 >
-                                    Add to Cart
+                                    Add
                                 </button>
                             </div>
                         ))}

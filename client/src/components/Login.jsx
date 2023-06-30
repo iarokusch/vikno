@@ -25,7 +25,7 @@ export default function login() {
 
                     localStorage.setItem('user', JSON.stringify(res.data));
                     setIsLoggedIn(true);
-                    navigate('/');
+                    navigate('/profile');
                 } else {
                     alert(res.data.message);
                 }
@@ -83,10 +83,10 @@ export default function login() {
                                 </div>
                             </div>
 
-                            <div>
+                            <div className='flex justify-center'>
                                 <button
                                     type='submit'
-                                    className='flex  justify-center rounded-md  px-3 py-1.5 text-sm font-semibold leading-6  shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                                    className='flex justify-center rounded-md  px-3 py-1.5 text-sm font-semibold leading-6 bg-yellow-300   shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
                                 >
                                     Sign in
                                 </button>

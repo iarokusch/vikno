@@ -108,7 +108,7 @@ export default function Contact() {
                         <div>
                             <button
                                 type='submit'
-                                className='hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none'
+                                className='hover:shadow-form rounded-md bg-yellow-300 hover:bg-yellow-300 py-3 px-8 text-base font-semibold  outline-none'
                             >
                                 Submit
                             </button>

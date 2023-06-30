@@ -59,8 +59,6 @@ const ArtistPage = () => {
         }
     };
 
-    console.log(artist);
-
     return (
         <div className='bg-black '>
             <div className='flex justify-around py-5'>
@@ -73,7 +71,8 @@ const ArtistPage = () => {
                     </button>
                 </div>
                 <div className='text-white text-xl mt-2'>
-                    {user?.userArtist?._id === artist?._id ? (
+                    {user?.role === 'admin' &&
+                    user?.userArtist?._id === artist?._id ? (
                         <NavLink to='/itemregister' state={artist}>
                             {`add a project to the artist : ${artist?.workingName}`}
                         </NavLink>
@@ -113,9 +112,9 @@ const ArtistPage = () => {
                     {/* <button onClick={uploadFoto}>upload foto</button> */}
                 </span>
                 <div className='grid grid-cols-3 gap-4'>
-                    {artist?.items.map((item) => (
+                    {items.map((item) => (
                         <div
-                            key={item.id}
+                            key={item._id}
                             className='bg-gray-100 text-left underline decoration-1'
                         >
                             <div className='py-5 px-2'>
@@ -139,18 +138,19 @@ const ArtistPage = () => {
                             </Link>
 
                             {/* Buttons for edit, delete, and save */}
-                            {isLoggedIn &&
+                            {user?.role === 'admin' &&
+                            isLoggedIn &&
                             user?.userArtist?._id === artist?._id ? (
                                 <div className='flex justify-end mt-2'>
                                     <NavLink
                                         to='/changeitemdata'
                                         state={item}
-                                        className=' font-bold py-2 px-4 mr-2'
+                                        className=' hover:bg-yellow-300  font-bold py-2 px-4 mr-2'
                                     >
                                         Edit
                                     </NavLink>
                                     <button
-                                        className='font-bold py-2 px-4 mr-2'
+                                        className=' hover:bg-yellow-300 font-bold py-2 px-4 mr-2'
                                         onClick={() => deleteItem(item._id)}
                                     >
                                         Delete
