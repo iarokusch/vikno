@@ -8,6 +8,18 @@
     text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+    /* Ваші стилі для мобільних пристроїв */
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Ваші стилі для планшетів */
+}
+
+@media screen and (min-width: 1025px) {
+    /* Ваші стилі для десктопів */
+}
+
 p {
     font-family: 'Raleway', sans-serif;
 }
@@ -15,52 +27,63 @@ p {
 .slide-top {
     animation: slide-top 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
+
 @keyframes slide-top {
     0% {
         transform: translateY(0);
         opacity: 0;
     }
+
     80% {
         opacity: 10;
     }
+
     100% {
         transform: translateY(100%);
         opacity: 20;
     }
 }
+
 .slide-left {
     animation: slide-left 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
+
 @keyframes slide-left {
     0% {
         transform: translateX(80%);
         opacity: 10;
     }
+
     50% {
         opacity: 7;
     }
+
     100% {
         transform: translateX(-50%);
         opacity: 0;
     }
 }
+
 .slide-left-opacity100 {
-    animation: slide-left-opacity100 9s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-        both;
+    animation: slide-left-opacity100 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
+
 @keyframes slide-left-opacity100 {
     0% {
         transform: translateX(80%);
         opacity: 5;
     }
+
     50% {
         opacity: 7;
     }
+
     100% {
         transform: translateX(-80%);
         opacity: 10;
     }
 }
+
 /* .slide-right {
     animation: slide-right 9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -86,11 +109,13 @@ p {
         transform: translateY(0);
         opacity: 7;
     }
+
     100% {
         transform: translateY(-30%);
         opacity: 0;
     }
 }
+
 .slide-opacity {
     animation: slide-opacity 11s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -100,15 +125,18 @@ p {
         transform: translateY(0);
         opacity: 20;
     }
+
     50% {
         transform: translateY(-20%);
         opacity: 10;
     }
+
     100% {
         transform: translateY(-100%);
         opacity: 0;
     }
 }
+
 .slide-opacity100 {
     animation: slide-opacity100 11s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -131,9 +159,11 @@ p {
     will-change: filter;
     transition: filter 300ms;
 }
+
 .logo:hover {
     filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
     filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -142,6 +172,7 @@ p {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -160,6 +191,7 @@ p {
 .read-the-docs {
     color: #888;
 }
+
 /* .slide-top {
     -webkit-animation: slide-top 1s linear both;
     animation: slide-top 10s linear both;
@@ -208,6 +240,7 @@ h6 {
         transform: translateX(-100%);
     }
 }
+
 /* @keyframes running-text-animation {
     50% {
         transform: translateX(100%);

@@ -72,7 +72,7 @@ const ArtistPage = () => {
                 </div>
                 <div className='text-white text-xl mt-2'>
                     {user?.role === 'admin' &&
-                    user?.userArtist?._id === artist?._id ? (
+                        user?.userArtist?._id === artist?._id ? (
                         <NavLink to='/itemregister' state={artist}>
                             {`add a project to the artist : ${artist?.workingName}`}
                         </NavLink>
@@ -139,8 +139,8 @@ const ArtistPage = () => {
 
                             {/* Buttons for edit, delete, and save */}
                             {user?.role === 'admin' &&
-                            isLoggedIn &&
-                            user?.userArtist?._id === artist?._id ? (
+                                isLoggedIn &&
+                                user?.userArtist?._id === artist?._id ? (
                                 <div className='flex justify-end mt-2'>
                                     <NavLink
                                         to='/changeitemdata'

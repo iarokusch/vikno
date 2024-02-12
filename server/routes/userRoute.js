@@ -7,7 +7,7 @@ import {
     delUserById,
     addNewUser,
     userLogin,
-    uploadProfileImg,
+   
 } from '../controllers/userControllers.js';
 import { auth } from '../midleware/auth.js';
 import { isAdmin } from '../midleware/isAdmin.js';
@@ -17,7 +17,7 @@ router.get('/refresh', auth, (req, res) => {
     res.send({ success: true, data: req.user });
 });
 router.get('/:id', auth, getUserById);
-router.patch('/upload', auth, uploadProfileImg);
+
 router.patch('/:id', auth, changeUserData);
 router.delete('/:id', auth, delUserById);
 router.post('/newuser', rules, addNewUser);

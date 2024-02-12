@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { MyContext } from '../context/context.js';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 export default function login() {
     const navigate = useNavigate();
     const { setUser, isLoggedIn, setIsLoggedIn } = useContext(MyContext);
@@ -92,6 +92,7 @@ export default function login() {
                                 </button>
                             </div>
                         </form>
+
                         {/* <div className='text-sm'>
                         <a
                             href='#'
@@ -100,6 +101,11 @@ export default function login() {
                             Forgot password?
                         </a>
                     </div> */}
+                    </div>
+                    <div className='mt-[20px] text-x text-decoration-style: solid'>
+                        <NavLink to='/users/newuser'>
+                            you can Register if you haven't already
+                        </NavLink>
                     </div>
                 </div>
             </div>

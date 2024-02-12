@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@headlessui/react": "^1.7.14",
-    "bcrypt": "^5.1.0",
+    "bcrypt": "^5.0.0",
     "cloudinary": "^1.37.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -12,7 +12,7 @@
     "mongoose": "^7.0.5",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.3",
-    "nodemon": "^2.0.22",
+    "nodemon": "^3.0.2",
     "react-google-font-loader": "^1.1.0",
     "react-icons": "^4.9.0",
     "react-image-gallery": "^1.2.11",

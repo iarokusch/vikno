@@ -24,33 +24,23 @@ export const Home = () => {
     }, []);
     console.log(items);
 
-    useEffect(() => {}, []);
+    useEffect(() => { }, []);
     return (
         <>
             <div
                 className='p-[6rem] pt-[100px]'
-                style={{
-                    backgroundImage: `url(/assets/logo4.png)`,
-                    backgroundSize: 'cover',
-                }}
+            // background img
             >
                 {/* <img
                     className=' '
                     src='http://localhost:5173/src/assets/logo4.png'
                     alt=''
                 /> */}
-                <div className=''>
-                    <div className='text-left text-[100px] font-bold '>
-                        <h1>Supporting </h1>
-                        <h1>Window </h1>
-                    </div>
+                <div >
+
                     <div className=' grid grid-row-3 gap-5'>
                         <div className='grid grid-cols-3 gap-3 '>
-                            <img
-                                className='slide-top'
-                                src={items[0]?.img[0]}
-                                alt=''
-                            />
+
                             <img
                                 className='slide-b'
                                 src={items[1]?.img[0]}
@@ -110,12 +100,12 @@ divimg
 
                 <div
                     className='w-[100%] h-[300px] my-[150px] p-5 text-black text-justify compo border-2 bg-gray-100'
-                    // style={{
-                    //     backgroundImage:
-                    //         "url('http://localhost:5173/src/assets/logo4.1.png')",
-                    //     backgroundSize: 'contain',
-                    //     backgroundRepeat: 'no-repeat',
-                    // }}
+                // style={{
+                //     backgroundImage:
+                //         "url('http://localhost:5173/src/assets/logo4.1.png')",
+                //     backgroundSize: 'contain',
+                //     backgroundRepeat: 'no-repeat',
+                // }}
                 >
                     <h3>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.

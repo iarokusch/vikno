@@ -9,10 +9,7 @@ const linksMenuWithProfile = [
         description: '',
         href: '/catalog',
     },
-    {
-        name: 'Participation',
-        href: '/participation',
-    },
+
     {
         name: 'Shop',
         href: '/shop',
@@ -37,10 +34,7 @@ const linksMenu = [
         description: '',
         href: '/catalog',
     },
-    {
-        name: 'Participation',
-        href: '/participation',
-    },
+
     {
         name: 'Shop',
         href: '/shop',
@@ -91,19 +85,11 @@ export default function Menu() {
             >
                 <div className='flex gap-x-[10px]'>
                     <NavLink to='/about'>
-                        <div className='relative color-black w-[70px]'>
-                            <img src='/assets/logo6.png' />
-                            {/* <div className='text-left ml-3'>
-                        <p>LOCAL</p>
-                        <p>SUPPORT</p>
-                        <p>UKRAINIAN</p>
-                    </div> */}
-                        </div>
+                        lOGO
                     </NavLink>
                     <div className='text-xl text-white text-left'>
-                        <p>VIKNO</p>
-                        <p>INTO</p>
-                        <p>CREATIVITY</p>
+                        <p>initiative</p>
+
                     </div>
                 </div>
                 <div className='menu-section pl-[50px]'>
@@ -123,23 +109,23 @@ export default function Menu() {
                                     <div className='p-4'>
                                         {isLoggedIn
                                             ? linksMenuWithProfile.map(
-                                                  (item) => (
-                                                      <NavLinkMenu
-                                                          toggleMenu={
-                                                              toggleMenu
-                                                          }
-                                                          item={item}
-                                                          key={item.href}
-                                                      />
-                                                  )
-                                              )
+                                                (item) => (
+                                                    <NavLinkMenu
+                                                        toggleMenu={
+                                                            toggleMenu
+                                                        }
+                                                        item={item}
+                                                        key={item.href}
+                                                    />
+                                                )
+                                            )
                                             : linksMenu.map((item) => (
-                                                  <NavLinkMenu
-                                                      toggleMenu={toggleMenu}
-                                                      item={item}
-                                                      key={item.href}
-                                                  />
-                                              ))}
+                                                <NavLinkMenu
+                                                    toggleMenu={toggleMenu}
+                                                    item={item}
+                                                    key={item.href}
+                                                />
+                                            ))}
                                     </div>
                                 </div>
                             </div>
@@ -149,10 +135,10 @@ export default function Menu() {
 
                 <div className='flex gap-20 '>
                     <NavLink to='/'>
-                        <h1 style={{ color: 'white' }}>HOME</h1>
+                        <p style={{ color: 'white' }}>HOME</p>
                     </NavLink>
                     <NavLink to='/login'>
-                        <h1 style={{ color: 'white' }}>SING IN</h1>
+                        <p style={{ color: 'white' }}>SING IN</p>
                     </NavLink>
                 </div>
             </div>
